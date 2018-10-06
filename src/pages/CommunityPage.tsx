@@ -82,6 +82,7 @@ export interface IState {
 
 export const mapStateToProps = (state: IStoreState, ownProps: Props) => {
   return (
+<<<<<<< HEAD
     {
       community: state.communities[1],
       currentUser: state.currentUser
@@ -129,3 +130,10 @@ class CommunityPageClass extends React.Component<Props, IState> {
 export const CommunityPage = connect<IStateProps, {}, IOwnProps>(mapStateToProps)(withStyles(styles)(CommunityPageClass));
 
 
+=======
+    <div className="row col-12">
+      TOTO Je CommunityPage
+    </div>
+  );
+};
+>>>>>>> 9f9aa638dd4d9f6de19317ad90b773d3a4ceef27
