@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 import Header from './components/Header';
-import { CommunitiesPage, CommunityPage, CommunitySettingsPage, CreateCommunityPage } from './pages';
 // import { About, MembersPage, MemberPageContainer } from './components';
+import './index.css';
+import { CommunitiesPage, CommunityPage, CommunitySettingsPage, CreateCommunityPage } from './pages';
 
 export const AppRouter: React.StatelessComponent<{}> = () => {
 
