@@ -105,7 +105,6 @@ class CommunityWidgetClass extends React.Component<Props, IState> {
   };
 
   public render() {
-    const pictureSrc = "icons/" + this.props.picture;
     const { classes, community, communityID } = this.props;
     if (this.state.redirect) {
       return <Redirect push={true} to={`/community/${communityID}`} />;
