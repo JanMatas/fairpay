@@ -17,7 +17,9 @@ const styles = {
   root: {
     flexGrow: 1,
   },
-
+  hue: {
+    color:'white',
+  },
   menuButton: {
     marginLeft: -12,
     marginRight: 20,
@@ -56,7 +58,7 @@ class MenuAppBar extends React.Component<{classes : any}, {}> {
               <MenuIcon />
             </IconButton> */}
             <Typography variant="title" color="inherit" className={classes.grow}>
-              FairPay
+                <a href="/" className={classes.hue}>FairPay</a>
             </Typography>
             {auth && (
               <div>

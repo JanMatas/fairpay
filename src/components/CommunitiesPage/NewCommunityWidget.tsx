@@ -41,12 +41,12 @@ class NewCommunityWidgetClass extends React.Component<IProps, IState> {
 
   public handleOnClick = () => {
     this.setState({redirect: true});
-  }
+  };
 
   public render () {
     const { classes } = this.props;
     if (this.state.redirect) {
-      return <Redirect push={true} to="/community/1/" />;
+      return <Redirect push={true} to="/new" />;
     }
     return (
       
@@ -63,7 +63,7 @@ class NewCommunityWidgetClass extends React.Component<IProps, IState> {
     );
   }
 
-};
+}
 
 export const NewCommunityWidget = withStyles(styles)(NewCommunityWidgetClass);
 

@@ -91,7 +91,7 @@ class CommunityWidgetClass extends React.Component<Props, IState> {
 
   public handleOnClick = () => {
     this.setState({ redirect: true });
-  }
+  };
 
   public render() {
     const { classes } = this.props;
