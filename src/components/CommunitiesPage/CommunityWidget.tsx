@@ -60,6 +60,7 @@ const styles = (theme: Theme) => createStyles({
 export interface IOwnProps {
   communityID: number;
   classes?: any;
+  picture?: string;
 }
 
 interface IStateProps {
@@ -95,6 +96,7 @@ class CommunityWidgetClass extends React.Component<Props, IState> {
 
   public render() {
     const { classes } = this.props;
+    const pictureSrc = "icons/" + this.props.picture;
     if (this.state.redirect) {
       return <Redirect push={true} to="/community/1/" />;
     }
@@ -102,9 +104,9 @@ class CommunityWidgetClass extends React.Component<Props, IState> {
 
       <Card className={classes.card} onClick={this.handleOnClick}>
         <div className={classes.content}>
-        <img className={classes.img} src="icons/039-beer.png" alt=""/>
+          <img className={classes.img} src={pictureSrc} alt="" />
 
-          
+
           <Typography variant="headline" component="h2" className={classes.title}>
             Roomies
         </Typography>
