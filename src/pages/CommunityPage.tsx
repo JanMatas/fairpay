@@ -82,7 +82,6 @@ export interface IState {
 
 export const mapStateToProps = (state: IStoreState, ownProps: Props) => {
   return (
-<<<<<<< HEAD
     {
       community: state.communities[1],
       currentUser: state.currentUser
@@ -102,7 +101,7 @@ class CommunityPageClass extends React.Component<Props, IState> {
   public render() {
     const { classes, community } = this.props;
     const iconSrc = "icons/" + community.icon;
-    const transactions = community.transactions.map(t => (<Transaction transaction={t} />))
+    const transactions = community.transactions.map(t => (<Transaction transaction={t} key={t.location+t.user+t.date} />))
     return (
       <div>
         <div className={classes.graph}>
@@ -128,12 +127,3 @@ class CommunityPageClass extends React.Component<Props, IState> {
 };
 
 export const CommunityPage = connect<IStateProps, {}, IOwnProps>(mapStateToProps)(withStyles(styles)(CommunityPageClass));
-
-
-=======
-    <div className="row col-12">
-      TOTO Je CommunityPage
-    </div>
-  );
-};
->>>>>>> 9f9aa638dd4d9f6de19317ad90b773d3a4ceef27

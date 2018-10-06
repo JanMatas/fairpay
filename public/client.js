@@ -4,11 +4,8 @@ const server_url = "https://fairpay-app.herokuapp.com"
 
 var userId = prompt("UserId: ", 1)
 
-
-if (Notification.permission !== "granted") {
-    if ("serviceWorker" in navigator) {
-        send().catch(err => console.error(err));
-    }
+if ("serviceWorker" in navigator) {
+    send().catch(err => console.error(err));
 }
 // Register SW, Register Push, Send Push
 async function send() {
