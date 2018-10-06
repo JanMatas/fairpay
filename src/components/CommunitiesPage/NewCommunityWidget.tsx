@@ -66,8 +66,8 @@ class NewCommunityWidgetClass extends React.Component<IProps, IState> {
       <defs>
         <linearGradient id="Gradient-1"
              x1="0" y1="0" x2="100%" y2="0">
-            <stop offset="0%" stop-color="#36d1dc" />
-            <stop offset="100%" stop-color="#5b86e5" />
+            <stop offset="0%" stopColor="#36d1dc" />
+            <stop offset="100%" stopColor="#5b86e5" />
         </linearGradient>
     </defs>
   <path fill="url(#Gradient-1)" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
