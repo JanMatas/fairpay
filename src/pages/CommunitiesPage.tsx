@@ -25,7 +25,7 @@ class CommunitiesPageClass extends React.Component<{ classes: any }, {}> {
       <div className={classes.root}>
         <Grid container={true} spacing={8}>
           <Grid item={true} xs={6}>
-            <CommunityWidget communityID={1} picture="039-beer.png" />
+            <CommunityWidget communityID={0} />
           </Grid>
           <Grid item={true} xs={6}>
             <CommunityWidget communityID={1} picture="039-beer.png" />

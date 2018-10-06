@@ -7,9 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import * as React from 'react';
-
-
-
+ 
 const styles = {
   grow: {
     flexGrow: 1,
@@ -24,6 +22,10 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+
+  appbar: {
+    backgroundColor: "#0E2439"
+  }
 };
 
 
@@ -52,7 +54,7 @@ class MenuAppBar extends React.Component<{classes : any}, {}> {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="static" className={classes.appbar}>
           <Toolbar>
             {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
               <MenuIcon />
