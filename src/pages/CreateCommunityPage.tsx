@@ -72,7 +72,7 @@ class SimpleDialog extends React.Component<ISimpleDialog, {}> {
         const { classes, onClose, selectedValue, ...other } = this.props;
 
         return (<Dialog onClose={this.handleClose} aria-labelledby="simple-dialog-title" {...other}>
-            <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
+            <DialogTitle id="simple-dialog-title">Pick Icon</DialogTitle>
             <div>
                 <List>
                     {emails.map(email => (
@@ -121,7 +121,7 @@ class SimpleDialogDemo extends React.Component {
             <div>
                 <Typography variant="subheading">Selected: {this.state.selectedValue}</Typography>
                 <br />
-                <Button variant="contained" color="secondary"  onClick={this.handleClickOpen}>Open simple dialog</Button>
+                <Button variant="contained" color="secondary"  onClick={this.handleClickOpen}>Choose Icon</Button>
                 <SimpleDialogWrapped
                     selectedValue={this.state.selectedValue}
                     open={this.state.open}
