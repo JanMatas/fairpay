@@ -1,3 +1,4 @@
+import { LinearProgress } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import { createStyles, Theme, withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -9,14 +10,10 @@ import { ICommunity } from '../../types/ICommunity';
 import { IUser } from '../../types/IUser';
 
 const styles = (theme: Theme) => createStyles({
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
+
   card: {
     'background-color': '#1f364d',
-    height: '160px',
+    height: '180px',
     justifyContent: 'space-between',
     display: 'flex',
     flexDirection: 'column'
@@ -38,6 +35,7 @@ const styles = (theme: Theme) => createStyles({
   },
   img: {
     width: '40px',
+    height: '40px',
     padding: '8px',
     backgroundColor: '#ffffff',
     border: '6px solid #0d2236',
@@ -48,10 +46,22 @@ const styles = (theme: Theme) => createStyles({
     'background-color': '#193048',
   },
   footerImg: {
-    maxWidth: '20px',
+    'width': '20px',
     'margin-top': '6px',
     'margin': '2px',
     'border-radius': '50%',
+  },
+  progress: {
+    width: "140px",
+    height: "3px",
+    color: "#9ab3cc",
+    "background-color": "#a9c1d7",
+    'border-radius': '2px',
+
+  },
+  spending: {
+    "font-size": "11px",
+    color:"#a9c1d7"
   }
 
 
@@ -94,27 +104,31 @@ class CommunityWidgetClass extends React.Component<Props, IState> {
   }
 
   public render() {
-    const { classes } = this.props;
+    const { classes, community, communityID } = this.props;
     if (this.state.redirect) {
-      return <Redirect push={true} to="/community/1/" />;
+      return <Redirect push={true} to={`/community/${communityID}`} />;
     }
-    return (
 
+    const iconSrc = "icons/" + community.icon;
+    const userAvatars = community.members.map(m => {
+      const fileName = `users/${m.username}.jpg`
+      return (<img className={classes.footerImg} src={fileName} key={m.username} alt="" />)
+    });
+    return (
       <Card className={classes.card} onClick={this.handleOnClick}>
         <div className={classes.content}>
-        <img className={classes.img} src="icons/039-beer.png" alt=""/>
 
-          
+          <img className={classes.img} src={iconSrc} alt="" />
           <Typography variant="headline" component="h2" className={classes.title}>
-            Roomies
-        </Typography>
+            {community.communityName}
+          </Typography>
+          <p className={classes.spending}>{`${community.spending}€ / ${community.budget}€`}</p>
+          
+        <LinearProgress className={classes.progress} variant="determinate" value={community.spending/community.budget * 100} />
 
         </div>
         <div className={classes.footer}>
-          <img className={classes.footerImg} src="users/jano.jpg" alt="" />
-          <img className={classes.footerImg} src="users/andrej.jpg" alt="" />
-          <img className={classes.footerImg} src="users/filip.jpg" alt="" />
-          <img className={classes.footerImg} src="users/matej.jpg" alt="" />
+          {userAvatars}
         </div>
 
       </Card>

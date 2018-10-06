@@ -11,7 +11,78 @@ import { IStoreState } from './types/index';
 
 
 const store = createStore<IStoreState, EnthusiasmAction, null, null>(enthusiasm, {
-  communities: [],
+  communities: [
+    {
+      communityName: "Epic trip",
+      members: [
+        {
+          "username": "jano"
+        },
+        {
+          "username": "filip"
+        },
+      ],
+      icon: "032-palm-tree.png",
+      spending: 18,
+      budget: 20,
+      transactions: [
+        {
+          "user": {
+            "username": "jano"
+          },
+          "value": 12.80,
+          "date": new Date(0),
+          "location": "Tesco Stores"
+        },
+        {
+          "user": {
+            "username": "jano"
+          },
+          "value": 27.50,
+          "date": new Date(0),
+          "location": "Zil Verne"
+        },
+      ]
+    },
+    {
+      communityName: "Beer Squad",
+      members: [
+        {
+          "username": "jano"
+        },
+        {
+          "username": "andrej"
+        },
+        {
+          "username": "filip"
+        },
+        {
+          "username": "matej"
+        },
+      ],
+      icon: "039-beer.png",
+      spending: 156,
+      budget: 400,
+      transactions: [
+        {
+          "user": {
+            "username": "jano"
+          },
+          "value": 12.85,
+          "date": new Date(0),
+          "location": "Tesco Stores"
+        },
+        {
+          "user": {
+            "username": "jano"
+          },
+          "value": 37.12,
+          "date": new Date(0),
+          "location": "Zil Verne"
+        },
+      ]
+    },
+  ],
   currentUser: undefined
 });
 

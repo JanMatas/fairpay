@@ -1,0 +1,12 @@
+#icon {
+
+
+    fill: rgba(255,255,255,1);
+    fill: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
+    fill: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(0,0,0,1)));
+    fill: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
+    fill: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
+    fill: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
+    fill: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=1 );
+}
