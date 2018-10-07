@@ -1,40 +1,100 @@
 [
   {
-    "user": {
-      "username": "filip"
-    },
-    "value": 12.85,
-    "date": "2018-03-13 13:14:34",
-    "location": "Tesco Stores",
-    "communityId": 1
-
+    "userId": 1,
+    "amount": 200,
+    "usersCommunityCardNumber": "4916280363608152",
+    "createdAt": "2018-10-06T20:22:40.000Z",
+    "id": 1,
+    "name": "Jano Matas",
+    "email": "janci5243@gmail.com",
+    "telNum": "+421918978947",
+    "facebookId": null,
+    "googleId": null,
+    "pushToken": "{\"endpoint\":\"https://fcm.googleapis.com/fcm/send/fs5qPlzm0ls:APA91bEibTN0h12GZXyf_9uMJ_u9gmsARRx2Md-7DPhjmVbu9Y_1Ey5ewINgHMn3YV7roTCFPzSPC8FVsTdViZeCrYbven299jIqaZ6U9476C7Y8gOu-KDQ6GZthJkQY4XpcbYPGPusL\",\"expirationTime\":null,\"keys\":{\"p256dh\":\"BAUO7-vcVkjUk-MCTrbAkqYBdlYZFTVbHCOUW5vZnpFfIHc4lOkVt_-Jlpu0Ol6oMrq9fZcJb3S4HjjJz0SSOf8\",\"auth\":\"WOviMkvTyW0LOQ_J2SyhAA\"}}",
+    "updatedAt": "2018-10-07T03:31:28.000Z"
   },
   {
-    "user": {
-      "username": "jano"
-    },
-    "value": 37.12,
-    "date": "2018-03-12 10:14:34",
-    "location": "Zil Verne",
-    "communityId": 1
+    "userId": 1,
+    "amount": 42,
+    "usersCommunityCardNumber": "4916280363608152",
+    "createdAt": "2018-10-06T20:22:40.000Z",
+    "id": 1,
+    "name": "Jano Matas",
+    "email": "janci5243@gmail.com",
+    "telNum": "+421918978947",
+    "facebookId": null,
+    "googleId": null,
+    "pushToken": "{\"endpoint\":\"https://fcm.googleapis.com/fcm/send/fs5qPlzm0ls:APA91bEibTN0h12GZXyf_9uMJ_u9gmsARRx2Md-7DPhjmVbu9Y_1Ey5ewINgHMn3YV7roTCFPzSPC8FVsTdViZeCrYbven299jIqaZ6U9476C7Y8gOu-KDQ6GZthJkQY4XpcbYPGPusL\",\"expirationTime\":null,\"keys\":{\"p256dh\":\"BAUO7-vcVkjUk-MCTrbAkqYBdlYZFTVbHCOUW5vZnpFfIHc4lOkVt_-Jlpu0Ol6oMrq9fZcJb3S4HjjJz0SSOf8\",\"auth\":\"WOviMkvTyW0LOQ_J2SyhAA\"}}",
+    "updatedAt": "2018-10-07T03:31:28.000Z"
   },
   {
-    "user": {
-      "username": "filip"
-    },
-    "value": 123.80,
-    "date": "2018-03-12 10:14:34",
-    "location": "Skyscanner",
-    "communityId": 0
-
+    "userId": 1,
+    "amount": 42,
+    "usersCommunityCardNumber": "4916280363608152",
+    "createdAt": "2018-10-06T20:22:40.000Z",
+    "id": 1,
+    "name": "Jano Matas",
+    "email": "janci5243@gmail.com",
+    "telNum": "+421918978947",
+    "facebookId": null,
+    "googleId": null,
+    "pushToken": "{\"endpoint\":\"https://fcm.googleapis.com/fcm/send/fs5qPlzm0ls:APA91bEibTN0h12GZXyf_9uMJ_u9gmsARRx2Md-7DPhjmVbu9Y_1Ey5ewINgHMn3YV7roTCFPzSPC8FVsTdViZeCrYbven299jIqaZ6U9476C7Y8gOu-KDQ6GZthJkQY4XpcbYPGPusL\",\"expirationTime\":null,\"keys\":{\"p256dh\":\"BAUO7-vcVkjUk-MCTrbAkqYBdlYZFTVbHCOUW5vZnpFfIHc4lOkVt_-Jlpu0Ol6oMrq9fZcJb3S4HjjJz0SSOf8\",\"auth\":\"WOviMkvTyW0LOQ_J2SyhAA\"}}",
+    "updatedAt": "2018-10-07T03:31:28.000Z"
   },
   {
-    "user": {
-      "username": "jano"
-    },
-    "value": 27.50,
-    "date": "2018-03-12 10:14:34",
-    "location": "Zil Verne",
-    "communityId": 0
+    "userId": 1,
+    "amount": 42,
+    "usersCommunityCardNumber": "4916280363608152",
+    "createdAt": "2018-10-06T20:22:40.000Z",
+    "id": 1,
+    "name": "Jano Matas",
+    "email": "janci5243@gmail.com",
+    "telNum": "+421918978947",
+    "facebookId": null,
+    "googleId": null,
+    "pushToken": "{\"endpoint\":\"https://fcm.googleapis.com/fcm/send/fs5qPlzm0ls:APA91bEibTN0h12GZXyf_9uMJ_u9gmsARRx2Md-7DPhjmVbu9Y_1Ey5ewINgHMn3YV7roTCFPzSPC8FVsTdViZeCrYbven299jIqaZ6U9476C7Y8gOu-KDQ6GZthJkQY4XpcbYPGPusL\",\"expirationTime\":null,\"keys\":{\"p256dh\":\"BAUO7-vcVkjUk-MCTrbAkqYBdlYZFTVbHCOUW5vZnpFfIHc4lOkVt_-Jlpu0Ol6oMrq9fZcJb3S4HjjJz0SSOf8\",\"auth\":\"WOviMkvTyW0LOQ_J2SyhAA\"}}",
+    "updatedAt": "2018-10-07T03:31:28.000Z"
+  },
+  {
+    "userId": 2,
+    "amount": 42,
+    "usersCommunityCardNumber": "4929592755708746",
+    "createdAt": "2018-10-06T23:39:25.000Z",
+    "id": 2,
+    "name": "Andrej Chudy",
+    "email": "achudy03@gmail.com",
+    "telNum": "+4219189423522",
+    "facebookId": null,
+    "googleId": null,
+    "pushToken": "{\"endpoint\":\"https://fcm.googleapis.com/fcm/send/e1O6FtqKWAQ:APA91bE_b9EVRXxLL-Pm5k48eMbvetHdmS0iUAn9CrCVwD_sQoPJfbbqbEtmaRPQWESvbhjM1YbZvYhPvkq2I7YcRulthryK-6rj7fRwjNi6I0cD_vFUVXEAB8UDggcCojWyGjMnQyTE\",\"expirationTime\":null,\"keys\":{\"p256dh\":\"BHBRveA_BQ2jkBoVDycJgS_NKaFdJ4nknHRQy_O5tfNKRK9uwQ7HNk1fAzAeIxdfTb3595eAjfpFpb1kiUOJf6A\",\"auth\":\"yiuN8AHuhkUR1rbV6j8L5Q\"}}",
+    "updatedAt": "2018-10-07T03:23:18.000Z"
+  },
+  {
+    "userId": 1,
+    "amount": 42,
+    "usersCommunityCardNumber": "4916280363608152",
+    "createdAt": "2018-10-06T20:22:40.000Z",
+    "id": 1,
+    "name": "Jano Matas",
+    "email": "janci5243@gmail.com",
+    "telNum": "+421918978947",
+    "facebookId": null,
+    "googleId": null,
+    "pushToken": "{\"endpoint\":\"https://fcm.googleapis.com/fcm/send/fs5qPlzm0ls:APA91bEibTN0h12GZXyf_9uMJ_u9gmsARRx2Md-7DPhjmVbu9Y_1Ey5ewINgHMn3YV7roTCFPzSPC8FVsTdViZeCrYbven299jIqaZ6U9476C7Y8gOu-KDQ6GZthJkQY4XpcbYPGPusL\",\"expirationTime\":null,\"keys\":{\"p256dh\":\"BAUO7-vcVkjUk-MCTrbAkqYBdlYZFTVbHCOUW5vZnpFfIHc4lOkVt_-Jlpu0Ol6oMrq9fZcJb3S4HjjJz0SSOf8\",\"auth\":\"WOviMkvTyW0LOQ_J2SyhAA\"}}",
+    "updatedAt": "2018-10-07T03:31:28.000Z"
+  },
+  {
+    "userId": 1,
+    "amount": 42,
+    "usersCommunityCardNumber": "4916280363608152",
+    "createdAt": "2018-10-06T20:22:40.000Z",
+    "id": 1,
+    "name": "Jano Matas",
+    "email": "janci5243@gmail.com",
+    "telNum": "+421918978947",
+    "facebookId": null,
+    "googleId": null,
+    "pushToken": "{\"endpoint\":\"https://fcm.googleapis.com/fcm/send/fs5qPlzm0ls:APA91bEibTN0h12GZXyf_9uMJ_u9gmsARRx2Md-7DPhjmVbu9Y_1Ey5ewINgHMn3YV7roTCFPzSPC8FVsTdViZeCrYbven299jIqaZ6U9476C7Y8gOu-KDQ6GZthJkQY4XpcbYPGPusL\",\"expirationTime\":null,\"keys\":{\"p256dh\":\"BAUO7-vcVkjUk-MCTrbAkqYBdlYZFTVbHCOUW5vZnpFfIHc4lOkVt_-Jlpu0Ol6oMrq9fZcJb3S4HjjJz0SSOf8\",\"auth\":\"WOviMkvTyW0LOQ_J2SyhAA\"}}",
+    "updatedAt": "2018-10-07T03:31:28.000Z"
   }
 ]

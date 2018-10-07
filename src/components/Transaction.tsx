@@ -56,19 +56,19 @@ class TransactionClass extends React.Component<IProps, IState> {
 
   public render () {
     const { classes, transaction } = this.props;
-    const fileName = `users/${transaction.user.username}.jpg`;
+    const fileName = `users/${transaction.userId}.jpg`;
     return (
         <div className={classes.root}>
             <img className={classes.img} src={fileName} alt="" />
             <Typography variant="headline" component="h2" className={classes.title}>
-            {transaction.location}
+            {transaction.vendorName}
             <span className={classes.date}>
-                {new Date(transaction.date).toDateString()}
+                {new Date(transaction.createdAt).toDateString()}
             </span>
             </Typography>
             
             <Typography variant="headline" component="h2" className={classes.sum}>
-            {`- €${transaction.value}`}
+            {`- €${transaction.amount}`}
             </Typography>
       </div>
 

@@ -125,7 +125,7 @@ class CommunityPageClass extends React.Component<Props, IState> {
   public render() {
     const { classes, community } = this.props;
     const iconSrc = "icons/" + community.icon;
-    const transactions = community.transactions.map(t => (<Transaction transaction={t} key={t.location + t.user + t.date} />));
+    const transactions = community.transactions.map(t => (<Transaction transaction={t} key={Math.random()} />));
     return (
       <div>
         <div className={classes.graph}>

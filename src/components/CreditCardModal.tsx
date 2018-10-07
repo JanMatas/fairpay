@@ -38,12 +38,12 @@ class SimpleDialog extends React.Component<IProps, {}> {
       <Modal className={classes.dialog} onClose={this.handleClose} aria-labelledby="simple-dialog-title" {...other}>
         <div>
                 <Cards
-                
                 number={4401290135728441}
                 name={"MR J MATAS"}
                 expiry={"09/21"}
                 cvc={"153"}
                 focused={"number"}
+                issuer={"VUB"}
               />
         </div>
       </Modal>

@@ -1,8 +1,9 @@
-import { IUser } from './IUser';
-
 export interface ITransaction {
-    user: IUser,
-    value: number,
+    userId: number,
+    amount: number,
+    name: string,
     date: string,
-    location: string
+    location: string,
+    vendorName: string,
+    createdAt: string,
 }

@@ -113,8 +113,8 @@ class CommunityWidgetClass extends React.Component<Props, IState> {
 
     const iconSrc = "icons/" + community.icon;
     const userAvatars = community.members.map(m => {
-      const fileName = `users/${m.username}.jpg`
-      return (<img className={classes.footerImg} src={fileName} key={m.username} alt="" />)
+      const fileName = `users/${m.userId}.jpg`
+      return (<img className={classes.footerImg} src={fileName} key={m.userId} alt="" />)
     });
     return (
       <Card className={classes.card} onClick={this.handleOnClick}>

@@ -11,15 +11,37 @@ import { IStoreState } from './types/index';
 
 
 const store = createStore<IStoreState, EnthusiasmAction, null, null>(enthusiasm, {
-  "communities": [
+  "communities": [{
+    "communityName": "Beer Squad",
+    "members": [
+      {
+        "userId": 1
+      },
+      {
+        "userId": 2
+      },
+      {
+        "userId": 3
+      },
+      {
+        "userId": 4
+      }
+    ],
+    "icon": "039-beer.png",
+    "spending": 156,
+    "budget": 400,
+    "transactions": [],
+    communityId: 0
+  },
+
     {
       "communityName": "Epic trip",
       "members": [
         {
-          "username": "jano"
+          "userId": 1
         },
         {
-          "username": "filip"
+          "userId": 3
         }
       ],
       "icon": "032-palm-tree.png",
@@ -27,42 +49,25 @@ const store = createStore<IStoreState, EnthusiasmAction, null, null>(enthusiasm,
       "budget": 20,
       "transactions": [
       ],
-      communityId: 0
-    },
-    {
-      "communityName": "Beer Squad",
-      "members": [
-        {
-          "username": "jano"
-        },
-        {
-          "username": "andrej"
-        },
-        {
-          "username": "filip"
-        },
-        {
-          "username": "matej"
-        }
-      ],
-      "icon": "039-beer.png",
-      "spending": 156,
-      "budget": 400,
-      "transactions": [],
       communityId: 1
     }
-  ]
+  ],
+  currentUser:     {
+    "userId": 4
+  }
 });
+setInterval(() => {
+  fetch('/get_all_transactions', {
+    headers: {'Content-Type':'application/json'},
+   }).then((response)=> {
+     response.json().then(data => {
+  
+       store.dispatch(loadAll(data));
+     }
+      )
+   });
+}, 2000);
 
-fetch('/db.json', {
-  headers: {'Content-Type':'application/json'},
- }).then((response)=> {
-   response.json().then(data => {
-
-     store.dispatch(loadAll(data));
-   }
-    )
- });
 
 ReactDOM.render(
 <Provider store={store}>

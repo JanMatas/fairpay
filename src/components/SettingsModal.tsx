@@ -61,7 +61,7 @@ class SimpleDialog extends React.Component<Props, IState> {
     public state = {
         value: 60,
         switchVal: true,
-        names: _.fromPairs(this.props.community.members.map(m => [m.username, 50]))
+        names: _.fromPairs(this.props.community.members.map(m => [m.userId, 50]))
     }
     handleClose = () => {
         this.props.onClose();
@@ -79,7 +79,7 @@ class SimpleDialog extends React.Component<Props, IState> {
         this.setState({...this.state, value });
     };
 
-    handleChangeSplit = (n:string) => (__: any, value: number) => {
+    handleChangeSplit = (n:number) => (__: any, value: number) => {
         console.log(n, value)
         let newNames = Object.assign({}, this.state.names);
         newNames[n] = value;
@@ -90,12 +90,12 @@ class SimpleDialog extends React.Component<Props, IState> {
     render() {
         const { classes, community } = this.props;
         const splitSliders = community.members.map(m => {
-        const fileName = `users/${m.username}.jpg`
-            const portion = this.state.names[m.username] / _.sum(_.values(this.state.names)) * 100 ;
+        const fileName = `users/${m.userId}.jpg`
+            const portion = this.state.names[m.userId] / _.sum(_.values(this.state.names)) * 100 ;
             return (
-            <div className={classes.sliderGroup} key={m.username}>
+            <div className={classes.sliderGroup} key={m.userId}>
                 <img className={classes.img} src={fileName} alt="" />
-                <Slider onChange={this.handleChangeSplit(m.username)} value={this.state.names[m.username]}/>
+                <Slider onChange={this.handleChangeSplit(m.userId)} value={this.state.names[m.userId]}/>
                 <span className={classes.number}>{`${Math.floor(portion)}%`}</span>
             </div>)
         });
@@ -138,7 +138,7 @@ class SimpleDialog extends React.Component<Props, IState> {
                             Cancel
             </Button>
                         <Button onClick={this.handleClose} color="primary">
-                            Subscribe
+                            Confirm
             </Button>
                     </DialogActions>
                 </Dialog>

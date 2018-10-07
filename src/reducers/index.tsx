@@ -15,8 +15,7 @@ export function enthusiasm(state: IStoreState, action: EnthusiasmAction): IStore
     case LOAD_ALL: {
       console.log("test")
       const newCommunities: ICommunity[] = state.communities.map(c => {
-
-        const communityTransactions = action.payload.filter((t: any) => t.communityId == c.communityId);
+        const communityTransactions = action.payload.filter((t: any) => t.communityId - 1 == c.communityId);
         return {
           ...c,
           transactions: communityTransactions
