@@ -9,6 +9,7 @@ import { Transaction } from '../components/Transaction';
 import { IStoreState } from '../types';
 import { ICommunity } from '../types/ICommunity';
 import { IUser } from '../types/IUser';
+
 const styles = (theme: Theme) => createStyles({
   root: {
     'background-color': '#1f364d',
