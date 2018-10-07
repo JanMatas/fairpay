@@ -3,6 +3,7 @@ const server_url = "https://fairpay-app.herokuapp.com"
 // Check for service worker
 var userId = prompt("UserId: ", 1)
 
+
 fetch(server_url + "/getPublicKey", {
     method: "POST",
     body: JSON.stringify({"userId": userId}),

@@ -14,6 +14,7 @@ const styles = {
   },
   root: {
     flexGrow: 1,
+    borderBottom: '1px solid #517ba5'
   },
   hue: {
     color:'white',

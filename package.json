@@ -17,6 +17,7 @@
     "highcharts": "^6.1.4",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
+    "react-chartjs": "^1.2.0",
     "react-chartkick": "^0.3.0",
     "react-dom": "^16.5.2",
     "react-material-ui-icon-picker": "0.0.1",
