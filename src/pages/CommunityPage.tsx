@@ -105,19 +105,19 @@ class CommunityPageClass extends React.Component<Props, IState> {
     });
     setTimeout(() => {
       console.log("test"),
-      Push.create("Hello world!", {
-        body: "How's it hangin'?",
-        timeout: 4000,
-        onClick: function () {
+        Push.create("Hello world!", {
+          body: "How's it hangin'?",
+          timeout: 4000,
+          onClick: function () {
             window.focus();
             close();
-        }
-      })
+          }
+        })
     }, 5000)
   };
 
   public handleCloseCard = () => {
-    this.setState({...this.state, openCard: false });
+    this.setState({ ...this.state, openCard: false });
   };
 
   public handleClickOpenSettings = () => {
@@ -146,7 +146,7 @@ class CommunityPageClass extends React.Component<Props, IState> {
             <Typography variant="headline" component="h2" className={classes.title}>
               {community.communityName}
             </Typography>
-            <CreditCard  onClick={this.handleClickOpenCard} className={classes.icon}/>
+            <CreditCard onClick={this.handleClickOpenCard} className={classes.icon} />
             <Settings onClick={this.handleClickOpenSettings} className={classes.icon} />
 
           </div>
