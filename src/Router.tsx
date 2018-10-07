@@ -4,10 +4,14 @@ import Header from './components/Header';
 // import { About, MembersPage, MemberPageContainer } from './components';
 import './index.css';
 import { CommunitiesPage, CommunityPage, CommunitySettingsPage, CreateCommunityPage } from './pages';
+const close = () => {
+  console.log(close)
+}
 
 export const AppRouter: React.StatelessComponent<{}> = () => {
 
   return (
+
     <HashRouter>
       <div>
         <Header />

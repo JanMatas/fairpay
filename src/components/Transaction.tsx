@@ -5,13 +5,13 @@ import { ITransaction } from '../types/ITransaction';
 
 const styles = (theme: Theme) => createStyles({
   root: {
+
     display: "flex",
     justifyContent: "space-between",
     flexDirection: "row",
     margin: '0px 15px',
     fontFamily : '"Open Sans"'
   },
-
   img: {
     margin: '10px',
     width: '35px',
