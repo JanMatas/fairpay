@@ -160,10 +160,6 @@ class CommunityPageClass extends React.Component<Props, IState> {
           open={this.state.openSettings}
           onClose={this.handleCloseSettings}
         />
-        <div>
-            <CreditCard className={classes.icon} />
-            <Settings className={classes.icon} />
-          </div>
         <div className={classes.padTop}>
           {transactions}
         </div>
