@@ -28,7 +28,7 @@ const store = createStore<IStoreState, EnthusiasmAction, null, null>(enthusiasm,
       transactions: [
         {
           "user": {
-            "username": "jano"
+            "username": "filip"
           },
           "value": 12.80,
           "date": new Date(0),
@@ -66,7 +66,7 @@ const store = createStore<IStoreState, EnthusiasmAction, null, null>(enthusiasm,
       transactions: [
         {
           "user": {
-            "username": "jano"
+            "username": "filip"
           },
           "value": 12.85,
           "date": new Date(0),

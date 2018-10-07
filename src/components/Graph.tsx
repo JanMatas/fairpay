@@ -1,9 +1,6 @@
 import { createStyles, Theme, withStyles } from '@material-ui/core';
-import {Chart} from 'chart.js'
 import * as React from "react";
-import ReactChartkick, { LineChart } from 'react-chartkick'
-
-ReactChartkick.addAdapter(Chart)
+import { LineChart } from 'react-chartkick'
 
 const styles = (theme: Theme) => createStyles({
     graphContainer: {
@@ -11,8 +8,6 @@ const styles = (theme: Theme) => createStyles({
         alignItems: "center",
         justifyContent: "center",
         'background-color': '#1f364d',
-        marginTop: "20px",
-        marginBottom: "5px",
     }
 });
 export class GraphClass extends React.Component<any, any> {
@@ -87,9 +82,18 @@ export class GraphClass extends React.Component<any, any> {
         return (
             <div className={classes.graphContainer}>
                 <LineChart data={{"2017-01-01": 61, "2017-01-02": 55, "2017-01-03": 28, "2017-01-04": 40}}
-                    height={'200px'} width={'350px'} prefix="$" color={"#ffffff"} colors={["#fff", "blue", "red"]} 
-                    library={ {vAxis:{gridlines:{color:'transparent'}}}}/>
-                
+                    height={'200px'} width={'450px'} prefix="$" library={{
+                    backgroundColor: "#1f364d",
+                    hAxis: {
+                        textStyle:{color: '#FFF'}
+                    },
+                    vAxis: {
+                        gridlines: {
+                            color: "#3a4c5f"
+                        },
+                        textStyle:{color: '#FFF'}
+                    },
+                }}/>
             </div>
         )
     }

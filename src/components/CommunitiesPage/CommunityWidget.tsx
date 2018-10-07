@@ -31,6 +31,7 @@ const styles = (theme: Theme) => createStyles({
   title: {
     color: "#ffffff",
     "font-size": "17px",
+    'font-family': "'Ubuntu', sans-serif",
     "font-weight": 500
   },
   img: {
