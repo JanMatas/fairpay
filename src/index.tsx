@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { EnthusiasmAction } from './actions';
+import { EnthusiasmAction, loadAll } from './actions';
 import './index.css';
 import { enthusiasm } from './reducers/index';
 import registerServiceWorker from './registerServiceWorker';
@@ -11,42 +11,27 @@ import { IStoreState } from './types/index';
 
 
 const store = createStore<IStoreState, EnthusiasmAction, null, null>(enthusiasm, {
-  communities: [
+  "communities": [
     {
-      communityName: "Epic trip",
-      members: [
+      "communityName": "Epic trip",
+      "members": [
         {
           "username": "jano"
         },
         {
           "username": "filip"
-        },
+        }
       ],
-      icon: "032-palm-tree.png",
-      spending: 18,
-      budget: 20,
-      transactions: [
-        {
-          "user": {
-            "username": "filip"
-          },
-          "value": 12.80,
-          "date": new Date(0),
-          "location": "Tesco Stores"
-        },
-        {
-          "user": {
-            "username": "jano"
-          },
-          "value": 27.50,
-          "date": new Date(0),
-          "location": "Zil Verne"
-        },
-      ]
+      "icon": "032-palm-tree.png",
+      "spending": 18,
+      "budget": 20,
+      "transactions": [
+      ],
+      communityId: 0
     },
     {
-      communityName: "Beer Squad",
-      members: [
+      "communityName": "Beer Squad",
+      "members": [
         {
           "username": "jano"
         },
@@ -58,34 +43,26 @@ const store = createStore<IStoreState, EnthusiasmAction, null, null>(enthusiasm,
         },
         {
           "username": "matej"
-        },
+        }
       ],
-      icon: "039-beer.png",
-      spending: 156,
-      budget: 400,
-      transactions: [
-        {
-          "user": {
-            "username": "filip"
-          },
-          "value": 12.85,
-          "date": new Date(0),
-          "location": "Tesco Stores"
-        },
-        {
-          "user": {
-            "username": "jano"
-          },
-          "value": 37.12,
-          "date": new Date(0),
-          "location": "Zil Verne"
-        },
-      ]
-    },
-  ],
-  currentUser: undefined
+      "icon": "039-beer.png",
+      "spending": 156,
+      "budget": 400,
+      "transactions": [],
+      communityId: 1
+    }
+  ]
 });
 
+fetch('/db.json', {
+  headers: {'Content-Type':'application/json'},
+ }).then((response)=> {
+   response.json().then(data => {
+
+     store.dispatch(loadAll(data));
+   }
+    )
+ });
 
 ReactDOM.render(
 <Provider store={store}>

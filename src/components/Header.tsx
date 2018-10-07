@@ -7,6 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import * as React from 'react';
+import { Redirect } from 'react-router';
  
 const styles = {
   grow: {
@@ -34,6 +35,7 @@ class MenuAppBar extends React.Component<{classes : any}, {}> {
   public state = {
     anchorEl: null,
     auth: true,
+    redirect: false,
   };
 
   public handleChange = (event : any) => {
@@ -48,20 +50,29 @@ class MenuAppBar extends React.Component<{classes : any}, {}> {
     this.setState({ anchorEl: null });
   };
 
+  public onLogoClick = () => {
+    this.setState({...this.state, redirect: true})
+  }
+
   public render() {
     const { classes } = this.props;
     const { auth, anchorEl } = this.state;
     const open = Boolean(anchorEl);
-
+    if (this.state.redirect) {
+      this.setState({...this.state, redirect: false})
+      
+      return <Redirect push={true} to={`/`} />;
+    }
     return (
+      
       <div className={classes.root}>
         <AppBar position="static" className={classes.appbar}>
           <Toolbar>
             {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
               <MenuIcon />
             </IconButton> */}
-            <Typography variant="title" color="inherit" className={classes.grow}>
-                <a href="/" className={classes.hue}>FairPay</a>
+            <Typography variant="title" color="inherit" onClick={this.onLogoClick} className={classes.grow}>
+               FairPay
             </Typography>
             {auth && (
               <div>

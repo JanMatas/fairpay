@@ -63,7 +63,7 @@ class TransactionClass extends React.Component<IProps, IState> {
             <Typography variant="headline" component="h2" className={classes.title}>
             {transaction.location}
             <span className={classes.date}>
-                {transaction.date.toDateString()}
+                {new Date(transaction.date).toDateString()}
             </span>
             </Typography>
             

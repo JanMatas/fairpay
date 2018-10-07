@@ -11,7 +11,6 @@ import { IStoreState } from '../types';
 import { ICommunity } from '../types/ICommunity';
 import { IUser } from '../types/IUser';
 import { SettingsDialog } from '../components/SettingsModal';
-import Push from 'push.js';
 
 const styles = (theme: Theme) => createStyles({
   root: {
@@ -65,9 +64,10 @@ const styles = (theme: Theme) => createStyles({
   }
 });
 
-export interface IOwnProps {
+interface IOwnProps {
   communityID: number;
   classes?: any;
+  match?: any;
 }
 
 interface IStateProps {
@@ -78,7 +78,7 @@ interface IStateProps {
 type Props = IStateProps & IOwnProps
 
 
-export interface IState {
+interface IState {
   openCard: boolean;
   openSettings: boolean;
 }
@@ -88,7 +88,7 @@ export interface IState {
 export const mapStateToProps = (state: IStoreState, ownProps: Props) => {
   return (
     {
-      community: state.communities[1],
+      community: state.communities[ownProps.match.params.id],
       currentUser: state.currentUser
     }
   )
@@ -103,17 +103,6 @@ class CommunityPageClass extends React.Component<Props, IState> {
       ...this.state,
       openCard: true,
     });
-    setTimeout(() => {
-      console.log("test"),
-        Push.create("Hello world!", {
-          body: "How's it hangin'?",
-          timeout: 4000,
-          onClick: function () {
-            window.focus();
-            close();
-          }
-        })
-    }, 5000)
   };
 
   public handleCloseCard = () => {

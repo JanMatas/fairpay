@@ -4,6 +4,8 @@ import { CSSProperties } from '@material-ui/core/styles/withStyles';
 import * as React from 'react';
 import { CommunityWidget } from '../components/CommunitiesPage/CommunityWidget';
 import { NewCommunityWidget } from '../components/CommunitiesPage/NewCommunityWidget';
+import { IStoreState } from '../types';
+import { connect } from 'react-redux';
 
 const styles = {
   paper: {
@@ -16,20 +18,42 @@ const styles = {
     marginTop: 16,
   },
 };
+interface IOwnProps {
+  classes?: any;
+}
+type Props =  IOwnProps & IStoreState
 
-class CommunitiesPageClass extends React.Component<{ classes: any }, {}> {
+
+const mapStateToProps = (state: IStoreState, ownProps: Props) => {
+  return (
+    {
+      ...state
+    }
+  )
+}
+
+
+
+
+
+class CommunitiesPageClass extends React.Component<Props, {}> {
 
   public render() {
-    const { classes } = this.props;
+    const { classes, communities } = this.props;
+    const communityWidgets = [];
+    for (let i = 0; i < communities.length; i++) {
+      communityWidgets.push((
+        <Grid item={true} xs={6}>
+
+      <CommunityWidget communityID={i} />
+      </Grid>
+
+      ));
+    }
     return (
       <div className={classes.root}>
         <Grid container={true} spacing={8}>
-          <Grid item={true} xs={6}>
-            <CommunityWidget communityID={0} />
-          </Grid>
-          <Grid item={true} xs={6}>
-            <CommunityWidget communityID={1} picture="039-beer.png" />
-          </Grid>
+          {communityWidgets}
           <Grid item={true} xs={6}>
             <NewCommunityWidget />
           </Grid>
@@ -40,4 +64,4 @@ class CommunitiesPageClass extends React.Component<{ classes: any }, {}> {
 
 };
 
-export const CommunitiesPage = withStyles(styles)(CommunitiesPageClass);
+export const CommunitiesPage = connect<IStoreState, {}, IOwnProps>(mapStateToProps)(withStyles(styles)(CommunitiesPageClass));

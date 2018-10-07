@@ -8,5 +8,5 @@ export interface ICommunity {
     spending: number,
     budget: number,
     transactions: ITransaction[],
-
+    communityId: number,
 }
