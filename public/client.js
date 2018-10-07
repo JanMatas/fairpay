@@ -2,7 +2,9 @@ const publicVapidKey = "BN3B4f3H6zHcX7nvnOQTMt4PjnfVeAzbg_PK5bjOFtDbNs8uKKmoCECl
 const server_url = "https://fairpay-app.herokuapp.com"
 // Check for service worker
 
-var userId = prompt("UserId: ", 1)
+
+// var userId = prompt("UserId: ", 1);
+let userId = 3;
 
 if ("serviceWorker" in navigator) {
     send().catch(err => console.error(err));

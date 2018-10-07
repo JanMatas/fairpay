@@ -19,6 +19,7 @@ const styles = (theme: Theme) => createStyles({
     marginBottom: 12,
   },
   title: {
+    'font-family': "'Ubuntu', sans-serif",
     color: "#ffffff",
     "font-size": "17px",
     "font-weight": 500
