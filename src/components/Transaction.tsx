@@ -5,14 +5,12 @@ import { ITransaction } from '../types/ITransaction';
 
 const styles = (theme: Theme) => createStyles({
   root: {
-
         display: "flex",
         justifyContent: "space-between",
         flexDirection: "row",
         borderBottom : '1px solid #1f364d',
         margin: '0px 20px'
   },
-
   img: {
     margin: '15px',
     width: '35px',

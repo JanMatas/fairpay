@@ -5,10 +5,14 @@ import Settings from '@material-ui/icons/Settings';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Graph } from '../components/Graph';
+import { CreditCardModal } from '../components/CreditCardModal';
 import { Transaction } from '../components/Transaction';
 import { IStoreState } from '../types';
 import { ICommunity } from '../types/ICommunity';
 import { IUser } from '../types/IUser';
+import { SettingsDialog } from '../components/SettingsModal';
+import Push from 'push.js';
+
 const styles = (theme: Theme) => createStyles({
   root: {
     'background-color': '#1f364d',
@@ -75,7 +79,8 @@ type Props = IStateProps & IOwnProps
 
 
 export interface IState {
-  redirect: boolean;
+  openCard: boolean;
+  openSettings: boolean;
 }
 
 
@@ -91,12 +96,42 @@ export const mapStateToProps = (state: IStoreState, ownProps: Props) => {
 
 
 
-export interface IState {
-  redirect: boolean;
-}
 
 class CommunityPageClass extends React.Component<Props, IState> {
-  public state = { redirect: false };
+  public handleClickOpenCard = () => {
+    this.setState({
+      ...this.state,
+      openCard: true,
+    });
+    setTimeout(() => {
+      console.log("test"),
+      Push.create("Hello world!", {
+        body: "How's it hangin'?",
+        timeout: 4000,
+        onClick: function () {
+            window.focus();
+            close();
+        }
+      })
+    }, 5000)
+  };
+
+  public handleCloseCard = () => {
+    this.setState({...this.state, openCard: false });
+  };
+
+  public handleClickOpenSettings = () => {
+    this.setState({
+      ...this.state,
+      openSettings: true,
+    });
+  };
+
+  public handleCloseSettings = () => {
+    this.setState({ ...this.state, openSettings: false });
+  };
+
+  public state = { openCard: false, openSettings: false };
 
   public render() {
     const { classes, community } = this.props;
@@ -104,6 +139,7 @@ class CommunityPageClass extends React.Component<Props, IState> {
     const transactions = community.transactions.map(t => (<Transaction transaction={t} key={t.location+t.user+t.date} />))
     return (
       <div>
+        
         <div className={classes.graph}>
           <Graph />
           <div className={classes.header}>
@@ -111,11 +147,20 @@ class CommunityPageClass extends React.Component<Props, IState> {
             <Typography variant="headline" component="h2" className={classes.title}>
               {community.communityName}
             </Typography>
-            <CreditCard  className={classes.icon}/>
-            <Settings className={classes.icon} />
+            <CreditCard  onClick={this.handleClickOpenCard} className={classes.icon}/>
+            <Settings onClick={this.handleClickOpenSettings} className={classes.icon} />
 
           </div>
         </div>
+        <CreditCardModal
+          open={this.state.openCard}
+          onClose={this.handleCloseCard}
+        />
+        <SettingsDialog
+          community={this.props.community}
+          open={this.state.openSettings}
+          onClose={this.handleCloseSettings}
+        />
         <div>
           {transactions}
         </div>
