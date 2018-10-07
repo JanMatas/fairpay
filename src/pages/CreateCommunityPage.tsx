@@ -1,13 +1,12 @@
-import { createStyles, Theme, withStyles } from '@material-ui/core/styles';
-import * as React from 'react';
 import Button from "@material-ui/core/Button/Button";
-import TextField from "@material-ui/core/TextField/TextField";
-import Typography from "@material-ui/core/Typography/Typography";
 import Dialog from "@material-ui/core/Dialog/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle/DialogTitle";
 import List from "@material-ui/core/List/List";
 import ListItem from "@material-ui/core/ListItem/ListItem";
 import ListItemText from "@material-ui/core/ListItemText/ListItemText";
+import { createStyles, Theme, withStyles } from '@material-ui/core/styles';
+import TextField from "@material-ui/core/TextField/TextField";
+import * as React from 'react';
 
 
 const styles = (theme: Theme) => createStyles({
@@ -24,7 +23,7 @@ const styles = (theme: Theme) => createStyles({
         display: 'flex',
         flexWrap: 'wrap' as 'wrap',
         justifyContent: 'center',
-    }
+    },
 });
 
 class CreateCommunityPageClass extends React.Component<{ classes: any }, {}> {
@@ -43,6 +42,13 @@ class CreateCommunityPageClass extends React.Component<{ classes: any }, {}> {
                     margin="normal"
                     variant="filled"
                 />
+                <TextField
+                    id="filled-name"
+                    label="Add members"
+                    className={classes.textField}
+                    margin="normal"
+                    variant="filled"
+                />
                 <Button variant="contained" color="primary">
                     Create
                 </Button>
@@ -53,8 +59,6 @@ class CreateCommunityPageClass extends React.Component<{ classes: any }, {}> {
 }
 
 export const CreateCommunityPage = withStyles(styles)(CreateCommunityPageClass);
-
-// OLAOLAOLA
 
 const icons = [
     '001-sun-block.png',
@@ -109,16 +113,16 @@ const icons = [
     '050-sand-bucket.png'
 ];
 
-const styles2 = {
+const styles2 = (theme: Theme) => createStyles({
     img: {
         width: '30px',
         height: '30px',
-        padding: '3px',
+        padding: '10px',
         backgroundColor: '#ffffff',
         border: '6px solid #0d2236',
         'border-radius': '50%',
     },
-};
+});
 
 class SimpleDialog extends React.Component<ISimpleDialog, {}> {
     handleClose = () => {
@@ -200,28 +204,44 @@ class SimpleDialogDemo extends React.Component<demoI, DemoS> {
 
         return (
             <div>
-                <img className={classes.img} src={"icons/" + this.state.selectedValue} />
-                <Typography variant="subheading">Selected: {this.state.selectedValue}</Typography>
-                <Button variant="contained" color="secondary" onClick={this.handleClickOpen}>Choose Icon</Button>
-                <SimpleDialogWrapped
-                    selectedValue={this.state.selectedValue}
-                    open={this.state.open}
-                    onClose={this.handleClose}
-                />
+                <div className={classes.header}>
+                    <Button variant="contained" color="secondary" onClick={this.handleClickOpen}>Choose Icon</Button>
+                    <img className={classes.img} src={"icons/" + this.state.selectedValue} />
+                </div>
+                <div className={classes.dialogues}>
+                    <SimpleDialogWrapped
+                        selectedValue={this.state.selectedValue}
+                        open={this.state.open}
+                        onClose={this.handleClose}
+                    />
+                </div>
+
             </div>
         );
     }
 }
 
-const styles3 = {
+const styles3 = (theme: Theme) => createStyles({
     img: {
         width: '30px',
         height: '30px',
-        padding: '3px',
+        padding: '6px',
         backgroundColor: '#ffffff',
-        border: '6px solid #0d2236',
+        border: '10px solid #0d2236',
         'border-radius': '50%',
-    }
-}
+    },
+    header: {
+        display: "flex",
+        justifyContent: "space-between",
+        flexDirection: "row",
+        margin: '20px',
+    },
+    dialogues: {
+        display: "flex",
+        justifyContent: "space-between",
+        flexDirection: "column",
+        margin: '20px',
+    },
+});
 
 const SimpleDialogComponent = withStyles(styles3)(SimpleDialogDemo);

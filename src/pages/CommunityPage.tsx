@@ -23,7 +23,7 @@ const styles = (theme: Theme) => createStyles({
   header: {
     display: "flex",
     justifyContent: "space-between",
-    flexDirection: "row",
+    flexDirection: "row"
   },
   graph: {
     display: "flex",
@@ -40,11 +40,7 @@ const styles = (theme: Theme) => createStyles({
     width: '25px',
     height: '25px',
     margin: '8px',
-
     marginTop: '18px',
-  },
-  transactions: {
-
   },
   img: {
     width: '20px',
@@ -56,13 +52,17 @@ const styles = (theme: Theme) => createStyles({
     margin: '10px',
   },
   title: {
-    paddingTop:"20px",
+    paddingTop: "20px",
     color: "#ffffff",
+    'font-family': "'Ubuntu', sans-serif",
     "font-size": "17px",
     "font-weight": 500,
     diplay: "flex",
     flexGrow: 1,
   },
+  padTop: {
+    marginTop: '10px',
+  }
 });
 
 export interface IOwnProps {
@@ -136,10 +136,9 @@ class CommunityPageClass extends React.Component<Props, IState> {
   public render() {
     const { classes, community } = this.props;
     const iconSrc = "icons/" + community.icon;
-    const transactions = community.transactions.map(t => (<Transaction transaction={t} key={t.location+t.user+t.date} />))
+    const transactions = community.transactions.map(t => (<Transaction transaction={t} key={t.location + t.user + t.date} />));
     return (
       <div>
-        
         <div className={classes.graph}>
           <Graph />
           <div className={classes.header}>
@@ -162,6 +161,10 @@ class CommunityPageClass extends React.Component<Props, IState> {
           onClose={this.handleCloseSettings}
         />
         <div>
+            <CreditCard className={classes.icon} />
+            <Settings className={classes.icon} />
+          </div>
+        <div className={classes.padTop}>
           {transactions}
         </div>
       </div>
