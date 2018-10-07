@@ -52,7 +52,7 @@ const styles = (theme: Theme) => createStyles({
     margin: '10px',
   },
   title: {
-    paddingTop:"20px",
+    paddingTop: "20px",
     color: "#ffffff",
     "font-size": "17px",
     "font-weight": 500,
@@ -101,7 +101,7 @@ class CommunityPageClass extends React.Component<Props, IState> {
   public render() {
     const { classes, community } = this.props;
     const iconSrc = "icons/" + community.icon;
-    const transactions = community.transactions.map(t => (<Transaction transaction={t} key={t.location+t.user+t.date} />))
+    const transactions = community.transactions.map(t => (<Transaction transaction={t} key={t.location + t.user + t.date} />))
     return (
       <div>
         <div className={classes.graph}>
@@ -111,7 +111,7 @@ class CommunityPageClass extends React.Component<Props, IState> {
             <Typography variant="headline" component="h2" className={classes.title}>
               {community.communityName}
             </Typography>
-            <CreditCard  className={classes.icon}/>
+            <CreditCard className={classes.icon} />
             <Settings className={classes.icon} />
 
           </div>
